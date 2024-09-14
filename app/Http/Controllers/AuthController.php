@@ -4,6 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Password;
+use App\Models\User;
+use App\Notifications\VerifyEmailNotification;
+use Illuminate\Auth\Events\Verified;
 
 class AuthController extends Controller
 {
