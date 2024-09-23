@@ -55,129 +55,62 @@
                   <div class="container">
                      <h1 class="fashion_taital">Jewellery Accessories</h1>
                      <div class="fashion_section_2">
-                        <div class="row">
-                           <div class="col-lg-4 col-sm-4">
+                        
+                        <div class="row"><div class="col-lg-4 col-sm-4">
+                            @foreach($products as $product)
+                            <a href="{{ route('jumkas', $product->id) }}" class="box_link">
                               <div class="box_main">
-                                 <h4 class="shirt_text">Jumkas</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="jewellery_img"><img src="images/jhumka-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
+                                <h4 class="shirt_text">Jumkas</h4>
+                                <p class="price_text">Start Price <span style="color: #262626;">$ 100</span></p>
+                                <div class="jewellery_img">
+                                    <img src="images/jhumka-img.png">
+                                </div>
+                                <div class="btn_main">
+                                  <div class="buy_bt">
+                                    <a href="#">Buy Now</a>
+                                  </div>
+                                  <div class="seemore_bt">
+                                    <a href="#">See More</a>
+                                  </div>
+                                </div>
                               </div>
-                           </div>
+                            </a>
+                            @endforeach
+                          </div>
+
+
                            <div class="col-lg-4 col-sm-4">
+                            @foreach($products as $product)
+                            <a href="{{ route('necklaces', $product->id) }}", class="box_link">
                               <div class="box_main">
-                                 <h4 class="shirt_text">Necklaces</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="jewellery_img"><img src="images/neklesh-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
+                                <h4 class="shirt_text">Necklaces</h4>
+                                <p class="price_text">Start Price <span style="color: #262626;">$ 100</span></p>
+                                <div class="jewellery_img">
+                                  <img src="images/neklesh-img.png" alt="Necklace Image">
+                                </div>
                               </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
+                            </a>
+                            @endforeach
+                          </div>
+
+                          <div class="col-lg-4 col-sm-4">
+                            @foreach($products as $product)
+                            <a href="{{ route('kagans', $product->id) }}", class="box_link">
                               <div class="box_main">
-                                 <h4 class="shirt_text">Kangans</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="jewellery_img"><img src="images/kangan-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
+                                <h4 class="shirt_text">Kangans</h4>
+                                <p class="price_text">Start Price <span style="color: #262626;">$ 100</span></p>
+                                <div class="jewellery_img">
+                                  <img src="images/kangan-img.png" alt="Kangan Image">
+                                </div>
                               </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <h1 class="fashion_taital">Jewellery Accessories</h1>
-                     <div class="fashion_section_2">
-                        <div class="row">
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Jumkas</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="jewellery_img"><img src="images/jhumka-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Necklaces</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="jewellery_img"><img src="images/neklesh-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Kangans</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="jewellery_img"><img src="images/kangan-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <h1 class="fashion_taital">Jewellery Accessories</h1>
-                     <div class="fashion_section_2">
-                        <div class="row">
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Jumkas</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="jewellery_img"><img src="images/jhumka-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Necklaces</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="jewellery_img"><img src="images/neklesh-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Kangans</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="jewellery_img"><img src="images/kangan-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
+                            </a>
+                            @endforeach
+                          </div>
+
+
+
+
+
             <a class="carousel-control-prev" href="#jewellery_main_slider" role="button" data-slide="prev">
             <i class="fa fa-angle-left"></i>
             </a>
@@ -239,3 +172,15 @@
    </body>
 </html>
 @endsection
+
+
+
+
+
+
+
+
+
+
+
+

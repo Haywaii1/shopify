@@ -126,12 +126,9 @@
                         <ul>
                            <li><a href="#">
                               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                              <span class="padding_10">Cart</span></a>
+                              <a class="padding_10" href="{{ route('cart.view') }}">Cart</a>
                            </li>
-                           <li><a href="#">
-                              <i class="fa fa-user" aria-hidden="true"></i>
-                              <span class="padding_10">Cart</span></a>
-                           </li>
+
                         </ul>
                      </div>
                   </div>
