@@ -79,7 +79,7 @@
                           </div>
 
 
-                           <div class="col-lg-4 col-sm-4">
+                        <div class="col-lg-4 col-sm-4">
                             @foreach($products as $product)
                             <a href="{{ route('shirt', $product->id) }}", class="box_link">
                               <div class="box_main">
@@ -91,21 +91,21 @@
                               </div>
                             </a>
                             @endforeach
-                          </div>
+                        </div>
 
-                          <div class="col-lg-4 col-sm-4">
-                            @foreach($products as $product)
-                            <a href="{{ route('gown', $product->id) }}", class="box_link">
-                              <div class="box_main">
-                                <h4 class="shirt_text">Kangans</h4>
-                                <p class="price_text">Start Price <span style="color: #262626;">$ 100</span></p>
-                                <div class="jewellery_img">
-                                  <img src="images/women-clothes-img.png" alt="Gown">
+                        <div class="col-lg-4 col-sm-4">
+                                @foreach($products as $product)
+                                <a href="{{ route('gown', $product->id) }}", class="box_link">
+                                <div class="box_main">
+                                    <h4 class="shirt_text">Kangans</h4>
+                                    <p class="price_text">Start Price <span style="color: #262626;">$ 100</span></p>
+                                    <div class="jewellery_img">
+                                    <img src="images/women-clothes-img.png" alt="Gown">
+                                    </div>
                                 </div>
-                              </div>
-                            </a>
-                            @endforeach
-                          </div>
+                                </a>
+                                @endforeach
+                        </div>
 
 
 

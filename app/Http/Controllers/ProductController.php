@@ -5,14 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Electronics;
 
 class ProductController extends Controller
 {
-    public function electronics(){
-        return view('pages.electronics');
-    }
-
-
     public function jewellery(){
         $products = product::all();
 
@@ -29,13 +25,9 @@ class ProductController extends Controller
         // Fetch the product by ID
         $product = Product::findOrFail($id);
 
-        // Fetch related products (assuming they belong to the same category)
-        $relatedProducts = Product::where('category_id', $product->category_id)
-                                ->where('id', '!=', $product->id) // Exclude the current product
-                                ->get();
 
         // Pass data to the view
-        return view('products.jumkas', compact('product', 'relatedProducts'));
+        return view('products.jumkas', compact('product'));
     }
 
     public function necklaces($id) {
@@ -55,13 +47,10 @@ class ProductController extends Controller
         // Fetch the product by ID
         $product = Product::findOrFail($id);
 
-        // Fetch related products (assuming they belong to the same category)
-        $relatedProducts = Product::where('category_id', $product->category_id)
-                                ->where('id', '!=', $product->id) // Exclude the current product
-                                ->get();
+
 
         // Pass data to the view
-        return view('products.kagans', compact('product', 'relatedProducts'));
+        return view('products.kagans', compact('product'));
     }
 
         public function fashion(){
@@ -75,38 +64,27 @@ class ProductController extends Controller
         // Fetch the product by ID
         $product = Product::findOrFail($id);
 
-        // Fetch related products (assuming they belong to the same category)
-        $relatedProducts = Product::where('category_id', $product->category_id)
-                                ->where('id', '!=', $product->id) // Exclude the current product
-                                ->get();
 
         // Pass data to the view
-        return view('products.tshirt', compact('product', 'relatedProducts'));
+        return view('products.tshirt', compact('product'));
     }
 
     public function shirt($id) {
         // Fetch the product by ID
         $product = Product::findOrFail($id);
 
-        // Fetch related products (assuming they belong to the same category)
-        $relatedProducts = Product::where('category_id', $product->category_id)
-                                ->where('id', '!=', $product->id) // Exclude the current product
-                                ->get();
-
         // Pass data to the view
-        return view('products.shirt', compact('product', 'relatedProducts'));
+        return view('products.shirt', compact('product'));
     }
+
+
 
     public function gown($id) {
         // Fetch the product by ID
         $product = Product::findOrFail($id);
-
-        // Fetch related products (assuming they belong to the same category)
-        $relatedProducts = Product::where('category_id', $product->category_id)
-                                ->where('id', '!=', $product->id) // Exclude the current product
-                                ->get();
-
         // Pass data to the view
-        return view('products.gown', compact('product', 'relatedProducts'));
+        return view('products.gown', compact('product'));
     }
+
+
 }

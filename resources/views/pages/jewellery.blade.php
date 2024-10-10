@@ -48,80 +48,92 @@
       </div>
       <!-- banner bg main end -->
       <!-- jewellery  section start -->
-      <div class="jewellery_section">
-         <div id="jewellery_main_slider" class="carousel slide" data-ride="carousel">
+
+
+      <div class="fashion_section">
+        <div id="electronic_main_slider" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-               <div class="carousel-item active">
-                  <div class="container">
-                     <h1 class="fashion_taital">Jewellery Accessories</h1>
-                     <div class="fashion_section_2">
-                        
-                        <div class="row"><div class="col-lg-4 col-sm-4">
-                            @foreach($products as $product)
-                            <a href="{{ route('jumkas', $product->id) }}" class="box_link">
-                              <div class="box_main">
-                                <h4 class="shirt_text">Jumkas</h4>
-                                <p class="price_text">Start Price <span style="color: #262626;">$ 100</span></p>
-                                <div class="jewellery_img">
-                                    <img src="images/jhumka-img.png">
-                                </div>
-                                <div class="btn_main">
-                                  <div class="buy_bt">
-                                    <a href="#">Buy Now</a>
-                                  </div>
-                                  <div class="seemore_bt">
-                                    <a href="#">See More</a>
-                                  </div>
-                                </div>
-                              </div>
-                            </a>
-                            @endforeach
-                          </div>
-
-
-                           <div class="col-lg-4 col-sm-4">
-                            @foreach($products as $product)
-                            <a href="{{ route('necklaces', $product->id) }}", class="box_link">
-                              <div class="box_main">
-                                <h4 class="shirt_text">Necklaces</h4>
-                                <p class="price_text">Start Price <span style="color: #262626;">$ 100</span></p>
-                                <div class="jewellery_img">
-                                  <img src="images/neklesh-img.png" alt="Necklace Image">
-                                </div>
-                              </div>
-                            </a>
-                            @endforeach
-                          </div>
-
-                          <div class="col-lg-4 col-sm-4">
-                            @foreach($products as $product)
-                            <a href="{{ route('kagans', $product->id) }}", class="box_link">
-                              <div class="box_main">
-                                <h4 class="shirt_text">Kangans</h4>
-                                <p class="price_text">Start Price <span style="color: #262626;">$ 100</span></p>
-                                <div class="jewellery_img">
-                                  <img src="images/kangan-img.png" alt="Kangan Image">
-                                </div>
-                              </div>
-                            </a>
-                            @endforeach
-                          </div>
-
-
-
-
-
-            <a class="carousel-control-prev" href="#jewellery_main_slider" role="button" data-slide="prev">
-            <i class="fa fa-angle-left"></i>
-            </a>
-            <a class="carousel-control-next" href="#jewellery_main_slider" role="button" data-slide="next">
-            <i class="fa fa-angle-right"></i>
-            </a>
-            <div class="loader_main">
-               <div class="loader"></div>
+                <div class="carousel-item active">
+                    <div class="container">
+                        <h1 class="fashion_taital">Electronic</h1>
+                        <div class="fashion_section_2">
+                            <div class="row justify-content-center">
+                                @foreach ($products as $product)
+                                    <div class="col-lg-4 col-sm-4">
+                                        <a href="{{ route('jumkas', $product->id) }}" class="box_link">
+                                            <div class="box_main">
+                                                <h4 class="shirt_text">{{ $product->name }}</h4>
+                                                <p class="price_text">Start Price <span
+                                                        style="color: #262626;">${{ $product->price }}</span></p>
+                                                <div class="electronic_img">
+                                                    <img src="{{ asset('images/' . $product->image) }}"
+                                                        alt="{{ $product->name }}">
+                                                </div>
+                                                <div class="btn_main">
+                                                    {{-- <div class="buy_bt"><a href="{{ route('buy', $electronic->id) }}">Buy Now</a></div> --}}
+                                                    {{-- <div class="seemore_bt"><a href="{{ route('product.show', $electronic->id) }}">See More</a></div> --}}
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
+
+
+
+
+
+      {{-- <div class="jewellery_section">
+        <div id="jewellery_main_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container">
+                        <h1 class="fashion_taital text-center">Jewellery Accessories</h1> <!-- Centered title -->
+                        <div class="fashion_section_2">
+                            <div class="row justify-content-center"> <!-- Center items -->
+                                <div class="col-lg-4 col-sm-4">
+                                    @foreach($products as $product)
+                                    <a href="{{ route('jumkas', $product->id) }}" class="box_link">
+                                        <div class="box_main text-center"> <!-- Center content inside the box -->
+                                            <h4 class="shirt_text">Jumkas</h4>
+                                            <p class="price_text">Start Price <span style="color: #262626;">$ 100</span></p>
+                                            <div class="jewellery_img">
+                                                <img src="images/jhumka-img.png" alt="Jumka Image">
+                                            </div>
+                                            <div class="btn_main">
+                                                <div class="buy_bt">
+                                                    <a href="#">Buy Now</a>
+                                                </div>
+                                                <div class="seemore_bt">
+                                                    <a href="#">See More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div> --}}
+
+                        <a class="carousel-control-prev" href="#jewellery_main_slider" role="button" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a class="carousel-control-next" href="#jewellery_main_slider" role="button" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                        <div class="loader_main">
+                            <div class="loader"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
       <!-- jewellery  section end -->
       <!-- footer section start -->
       <div class="footer_section layout_padding">

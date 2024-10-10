@@ -9,10 +9,10 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
-{
-    Schema::create('products', function (Blueprint $table) {
-        $table->id();
+    public function up(): void
+    {
+        Schema::create('electronics', function (Blueprint $table) {
+            $table->id();
         $table->string('name');
         $table->string('brand');
         $table->string('model');
@@ -26,14 +26,15 @@ return new class extends Migration
         $table->text('weight');
         $table->integer('warranty_period')->nullable(); // in months
         $table->timestamps();
-    });
+        });
 
-}
-
-
-    public function down()
-    {
-        Schema::dropIfExists('products');
     }
 
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('electronics');
+    }
 };

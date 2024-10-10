@@ -5,10 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Electronics extends Model
 {
-    use HasFactory;
-
     protected $fillable = [
         'name',
         'brand',
@@ -23,20 +21,9 @@ class Product extends Model
         'warranty_period'
     ];
 
-    /**
-     * Get the category that owns the product.
-     */
     public function category()
     {
-        return $this->belongsTo(Category::class);
-    }
-
-    /**
-     * Get the reviews for the product.
-     */
-    public function reviews()
-    {
-        return $this->hasMany(Review::class);
+        return $this->belongsTo(ProductCategory::class);
     }
 }
 

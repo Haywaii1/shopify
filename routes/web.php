@@ -4,9 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ElectronicsController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Models\Product;
+use App\Models\Electronics;
 
 
 /*
@@ -21,7 +23,8 @@ use App\Models\Product;
 */
 
 Route::get('/home', [HomeController::class, 'home'])->name('home')->middleware('auth');
-Route::get('/electronics', [ProductController::class, 'electronics'])->name('electronics')->middleware('auth');
+Route::get('/electronics', [ElectronicsController::class, 'electronics'])->name('electronics')->middleware('auth');
+Route::get('/laptops/{id}', [ElectronicsController::class, 'laptops'])->name('laptops')->middleware('auth');
 Route::get('/fashion', [ProductController::class, 'fashion'])->name('fashion')->middleware('auth');
 Route::get('/jewellery', [ProductController::class, 'jewellery'])->name('jewellery')->middleware('auth');
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
@@ -43,6 +46,7 @@ Route::get('/kagans/{id}', [ProductController::class, 'kagans'])->name('kagans')
 Route::get('/tshirt/{id}', [ProductController::class, 'tshirt'])->name('tshirt')->middleware('auth');
 Route::get('/shirt/{id}', [ProductController::class, 'shirt'])->name('shirt')->middleware('auth');
 Route::get('/gown/{id}', [ProductController::class, 'gown'])->name('gown')->middleware('auth');
+Route::get('/laptop/{id}', [ProductController::class, 'laptop'])->name('laptop')->middleware('auth');
 
 
 Route::get('/products', function () {
@@ -72,3 +76,9 @@ Route::get('/category/{categoryId}/products', [ProductController::class, 'indexB
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomePageController::class, 'welcome'])->name('welcome');
+
+// Categories
+
+// Route::resource('product-categories', ProductCategoryController::class);
+// Route::resource('electronics', ElectronicsController::class);
+

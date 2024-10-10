@@ -67,19 +67,6 @@
       <li>Weight: {{ $product->weight }}g</li>
     </ul>
   </div>
-
-  <div class="related-products">
-    <h2>Related Products</h2>
-    <div class="product-grid">
-      @foreach($relatedProducts as $relatedProduct)
-        <div class="product-card">
-          <img src="{{ asset('images/'.$relatedProduct->image) }}" alt="{{ $relatedProduct->name }}">
-          <p class="product-title">{{ $relatedProduct->name }}</p>
-          <p class="product-price">${{ $relatedProduct->price }}</p>
-        </div>
-      @endforeach
-    </div>
-  </div>
 </div>
 @endsection
 
