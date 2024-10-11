@@ -32,6 +32,12 @@
 
 @section('content')
     <div class="container">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <div class="product-images">
             <div class="image-gallery">
                 <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}">
