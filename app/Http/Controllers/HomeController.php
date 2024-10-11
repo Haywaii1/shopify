@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\Clothes;
+use App\Models\Electronics;
 
 class HomeController extends Controller
 {
@@ -21,9 +24,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function home()
-    {
-        return view('home');
+    public function home(){
+        $products = product::all();
+        $clothes = clothes::all();
+        $electronics = electronics::all();
+
+        return view('home', compact('products', 'clothes', 'electronics')); // Pass both variables to the view
     }
-    
 }

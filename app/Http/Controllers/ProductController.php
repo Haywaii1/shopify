@@ -58,33 +58,4 @@ class ProductController extends Controller
 
                 return view('pages.fashion', compact('products'));
             }
-
-
-    public function tshirt($id) {
-        // Fetch the product by ID
-        $product = Product::findOrFail($id);
-
-
-        // Pass data to the view
-        return view('products.tshirt', compact('product'));
-    }
-
-    public function shirt($id) {
-        // Fetch the product by ID
-        $product = Product::findOrFail($id);
-
-        // Pass data to the view
-        return view('products.shirt', compact('product'));
-    }
-
-
-
-    public function gown($id) {
-        // Fetch the product by ID
-        $product = Product::findOrFail($id);
-        // Pass data to the view
-        return view('products.gown', compact('product'));
-    }
-
-
 }

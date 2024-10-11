@@ -5,10 +5,12 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ElectronicsController;
+use App\Http\Controllers\ClothesController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Models\Product;
 use App\Models\Electronics;
+use App\Models\Clothes;
 
 
 /*
@@ -25,6 +27,8 @@ use App\Models\Electronics;
 Route::get('/home', [HomeController::class, 'home'])->name('home')->middleware('auth');
 Route::get('/electronics', [ElectronicsController::class, 'electronics'])->name('electronics')->middleware('auth');
 Route::get('/laptops/{id}', [ElectronicsController::class, 'laptops'])->name('laptops')->middleware('auth');
+Route::get('/tshirt/{id}', [ClothesController::class, 'tshirt'])->name('tshirt')->middleware('auth');
+Route::get('/clothes', [ClothesController::class, 'clothes'])->name('clothes')->middleware('auth');
 Route::get('/fashion', [ProductController::class, 'fashion'])->name('fashion')->middleware('auth');
 Route::get('/jewellery', [ProductController::class, 'jewellery'])->name('jewellery')->middleware('auth');
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
@@ -43,7 +47,6 @@ Route::get('/jumkas/{id}', [ProductController::class, 'jumkas'])->name('jumkas')
 
 Route::get('/necklaces/{id}', [ProductController::class, 'necklaces'])->name('necklaces')->middleware('auth');
 Route::get('/kagans/{id}', [ProductController::class, 'kagans'])->name('kagans')->middleware('auth');
-Route::get('/tshirt/{id}', [ProductController::class, 'tshirt'])->name('tshirt')->middleware('auth');
 Route::get('/shirt/{id}', [ProductController::class, 'shirt'])->name('shirt')->middleware('auth');
 Route::get('/gown/{id}', [ProductController::class, 'gown'])->name('gown')->middleware('auth');
 Route::get('/laptop/{id}', [ProductController::class, 'laptop'])->name('laptop')->middleware('auth');

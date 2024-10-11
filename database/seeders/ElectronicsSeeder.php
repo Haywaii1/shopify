@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use App\Models\Product; // Import the Product model
+use App\Models\Electronics; // Import the Product model
 
 class ElectronicsSeeder extends Seeder
 {
@@ -67,7 +67,7 @@ class ElectronicsSeeder extends Seeder
 
         // Loop through each electronic item and create/update the corresponding Product
         foreach ($electronics as $electronicData) {
-            Product::updateOrCreate(
+            Electronics::updateOrCreate(
                 ['name' => $electronicData['name']], // Check for the product by name
                 [
                     'brand' => $electronicData['brand'],

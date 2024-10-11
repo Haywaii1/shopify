@@ -197,66 +197,62 @@
                         <div class="container">
                             <h1 class="fashion_taital">Man & Woman Fashion</h1>
                             <div class="fashion_section_2">
-                                <div class="row">
-                                    <div class="col-lg-4 col-sm-4">
-                                        @foreach ($products as $product)
-                                            <a href="{{ route('tshirt', $product->id) }}" class="box_link">
+                                <div class="row justify-content-center">
+                                    @foreach ($clothes as $clothe)
+                                        <div class="col-lg-4 col-sm-4">
+                                            <a href="{{ route('clothes', $clothe->id) }}" class="box_link">
                                                 <div class="box_main">
-                                                    <h4 class="shirt_text">Man T -shirt</h4>
-                                                    <p class="price_text">Price <span style="color: #262626;">$ 30</span>
-                                                    </p>
-                                                    <div class="tshirt_img"><img src="images/tshirt-img.png"></div>
+                                                    <h4 class="shirt_text">{{ $clothe->name }}</h4>
+                                                    <p class="price_text">Start Price <span
+                                                            style="color: #262626;">${{ $clothe->price }}</span></p>
+                                                    <div class="electronic_img">
+                                                        <img src="{{ asset('images/' . $clothe->image) }}"
+                                                            alt="{{ $clothe->name }}">
+                                                    </div>
                                                 </div>
                                             </a>
-                                        @endforeach
-                                    </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
 
-                                    <div class="col-lg-4 col-sm-4">
-                                        @foreach ($products as $product)
-                                            <a href="{{ route('shirt', $product->id) }}" class="box_link">
+                            <div class="fashion_section_2">
+                                <div class="row justify-content-center">
+                                    @foreach ($electronics as $electronic)
+                                        <div class="col-lg-4 col-sm-4">
+                                            <a href="{{ route('laptops', $electronic->id) }}" class="box_link">
+                                                <div class="box_main">
+                                                    <h4 class="shirt_text">{{ $electronic->name }}</h4>
+                                                    <p class="price_text">Start Price <span
+                                                            style="color: #262626;">${{ $electronic->price }}</span></p>
+                                                    <div class="electronic_img">
+                                                        <img src="{{ asset('images/' . $electronic->image) }}"
+                                                            alt="{{ $electronic->name }}">
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+
+                            <div class="fashion_section_2">
+                                <div class="row justify-content-center">
+                                    @foreach ($products as $product)
+                                        <div class="col-lg-4 col-sm-4">
+                                            <a href="{{ route('jumkas', $product->id) }}" class="box_link">
                                                 <div class="box_main">
                                                     <h4 class="shirt_text">{{ $product->name }}</h4>
-                                                    <p class="price_text">Price <span
+                                                    <p class="price_text">Start Price <span
                                                             style="color: #262626;">${{ $product->price }}</span></p>
-                                                    <div class="tshirt_img">
-                                                        <img src="{{ asset('images/women-clothes-img.png') }}"
+                                                    <div class="electronic_img">
+                                                        <img src="{{ asset('images/' . $product->image) }}"
                                                             alt="{{ $product->name }}">
                                                     </div>
-
                                                 </div>
                                             </a>
-                                        @endforeach
-                                    </div>
-
-                                    <div class="col-lg-4 col-sm-4">
-                                        @foreach($products as $product)
-                                        <a href="{{ route('gown', $product->id) }}" class="box_link">                                            <div class="box_main">
-                                                <h4 class="shirt_text">{{ $product->name }}</h4>
-                                                <p class="price_text">Price <span
-                                                        style="color: #262626;">${{ $product->price }}</span></p>
-                                                <div class="tshirt_img">
-                                                    <img src="{{ asset('images/women-clothes-img.png') }}"
-                                                        alt="{{ $product->name }}">
-                                                </div>
-
-                                            </div>
-                                        </a>
-                                        @endforeach
-                                    </div>
-
-
-
-                                    {{-- <div class="col-lg-4 col-sm-4">
-                                        <div class="box_main">
-                                            <h4 class="shirt_text">Woman Scart</h4>
-                                            <p class="price_text">Price <span style="color: #262626;">$ 30</span></p>
-                                            <div class="tshirt_img"><img src="images/women-clothes-img.png"></div>
-                                            <div class="btn_main">
-                                                <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                                <div class="seemore_bt"><a href="#">See More</a></div>
-                                            </div>
                                         </div>
-                                    </div> --}}
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
