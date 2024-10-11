@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+    
     <html lang="en">
 
     <head>
@@ -256,7 +262,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
         <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
             <i class="fa fa-angle-left"></i>
