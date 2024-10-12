@@ -9,9 +9,9 @@
             @foreach(session('cart') as $id => $details)
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <div>
-                        <h5>{{ $details['name'] }}</h5>
-                        <p>Quantity: {{ $details['quantity'] }}</p>
-                        <p>Price: ${{ $details['price'] }}</p>
+                        <h5>{{ $details['name'] ?? 'Unknown Name' }}</h5>
+                        <p>Quantity: {{ $details['quantity'] ?? 1 }}</p>
+                        <p>Price: ${{ $details['price'] ?? '0.00' }}</p>
                     </div>
                 </li>
             @endforeach

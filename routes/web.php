@@ -25,12 +25,12 @@ use App\Models\Clothes;
 */
 
 Route::get('/home', [HomeController::class, 'home'])->name('home')->middleware('auth');
-Route::get('/electronics', [ElectronicsController::class, 'electronics'])->name('electronics')->middleware('auth');
-Route::get('/laptops/{id}', [ElectronicsController::class, 'laptops'])->name('laptops')->middleware('auth');
-Route::get('/tshirt/{id}', [ClothesController::class, 'tshirt'])->name('tshirt')->middleware('auth');
-Route::get('/clothes', [ClothesController::class, 'clothes'])->name('clothes')->middleware('auth');
-Route::get('/fashion', [ProductController::class, 'fashion'])->name('fashion')->middleware('auth');
-Route::get('/jewellery', [ProductController::class, 'jewellery'])->name('jewellery')->middleware('auth');
+Route::get('/electronics', [ElectronicsController::class, 'electronics'])->name('electronics');
+Route::get('/laptops/{id}', [ElectronicsController::class, 'laptops'])->name('laptops');
+Route::get('/tshirt/{id}', [ClothesController::class, 'tshirt'])->name('tshirt');
+Route::get('/clothes', [ClothesController::class, 'clothes'])->name('clothes');
+Route::get('/fashion', [ProductController::class, 'fashion'])->name('fashion');
+Route::get('/jewellery', [ProductController::class, 'jewellery'])->name('jewellery')->middleware('guest');
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::get('/register', [AuthController::class, 'register'])->name('register')->middleware('guest');
 Route::post('/register-user', [AuthController::class, 'registerUser'])->name('register.user')->middleware('guest');
@@ -43,13 +43,13 @@ Route::get('/email/verify/{id}', [AuthController::class, 'verify'])->name('verif
 // Route::get('/product/{slug}', 'ProductController@show')->name('product.show');
 
 
-Route::get('/jumkas/{id}', [ProductController::class, 'jumkas'])->name('jumkas')->middleware('auth');
+Route::get('/jumkas/{id}', [ProductController::class, 'jumkas'])->name('jumkas');
 
-Route::get('/necklaces/{id}', [ProductController::class, 'necklaces'])->name('necklaces')->middleware('auth');
-Route::get('/kagans/{id}', [ProductController::class, 'kagans'])->name('kagans')->middleware('auth');
-Route::get('/shirt/{id}', [ProductController::class, 'shirt'])->name('shirt')->middleware('auth');
-Route::get('/gown/{id}', [ProductController::class, 'gown'])->name('gown')->middleware('auth');
-Route::get('/laptop/{id}', [ProductController::class, 'laptop'])->name('laptop')->middleware('auth');
+Route::get('/necklaces/{id}', [ProductController::class, 'necklaces'])->name('necklaces');
+Route::get('/kagans/{id}', [ProductController::class, 'kagans'])->name('kagans');
+Route::get('/shirt/{id}', [ProductController::class, 'shirt'])->name('shirt');
+Route::get('/gown/{id}', [ProductController::class, 'gown'])->name('gown');
+Route::get('/laptop/{id}', [ProductController::class, 'laptop'])->name('laptop');
 
 
 Route::get('/products', function () {
@@ -58,14 +58,14 @@ Route::get('/products', function () {
 });
 
 // Cart routes
-Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart');
-Route::get('cart', [CartController::class, 'viewCart'])->name('cart.view');
-Route::get('remove-from-cart/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove');
+Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart')->middleware('auth');
+Route::get('cart', [CartController::class, 'viewCart'])->name('cart.view')->middleware('auth');
+Route::get('remove-from-cart/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove')->middleware('auth');
 
 // Checkout
-Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
-Route::post('/checkout', [CheckoutController::class, 'processCheckout'])->name('checkout.process');
-Route::post('/checkout', [CheckoutController::class, 'processOrder'])->name('checkout.process');
+Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout')->middleware('auth');
+Route::post('/checkout', [CheckoutController::class, 'processCheckout'])->name('checkout.process')->middleware('auth');
+Route::post('/checkout', [CheckoutController::class, 'processOrder'])->name('checkout.process')->middleware('auth');
 
 
 
@@ -79,9 +79,3 @@ Route::get('/category/{categoryId}/products', [ProductController::class, 'indexB
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomePageController::class, 'welcome'])->name('welcome');
-
-// Categories
-
-// Route::resource('product-categories', ProductCategoryController::class);
-// Route::resource('electronics', ElectronicsController::class);
-
