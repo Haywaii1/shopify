@@ -62,6 +62,10 @@ Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.
 Route::get('cart', [CartController::class, 'viewCart'])->name('cart.view')->middleware('auth');
 Route::get('remove-from-cart/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove')->middleware('auth');
 
+// Route::get('/cart', function () {
+//     return view('cart');
+// });
+
 // Checkout
 Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout')->middleware('auth');
 Route::post('/checkout', [CheckoutController::class, 'processCheckout'])->name('checkout.process')->middleware('auth');
